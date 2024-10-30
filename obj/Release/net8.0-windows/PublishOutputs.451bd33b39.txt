@@ -1,0 +1,11 @@
+C:\Users\Adrean\Desktop\IM Finals App\PayrollProj.exe
+C:\Users\Adrean\Desktop\IM Finals App\PayrollProj.dll
+C:\Users\Adrean\Desktop\IM Finals App\PayrollProj.deps.json
+C:\Users\Adrean\Desktop\IM Finals App\PayrollProj.runtimeconfig.json
+C:\Users\Adrean\Desktop\IM Finals App\PayrollProj.pdb
+C:\Users\Adrean\Desktop\IM Finals App\System.Data.SqlClient.dll
+C:\Users\Adrean\Desktop\IM Finals App\runtimes\win-arm64\native\sni.dll
+C:\Users\Adrean\Desktop\IM Finals App\runtimes\win-x64\native\sni.dll
+C:\Users\Adrean\Desktop\IM Finals App\runtimes\win-x86\native\sni.dll
+C:\Users\Adrean\Desktop\IM Finals App\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Adrean\Desktop\IM Finals App\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll

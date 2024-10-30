@@ -1,0 +1,11 @@
+C:\Users\Adrean\Desktop\PayrollProj.exe
+C:\Users\Adrean\Desktop\PayrollProj.dll
+C:\Users\Adrean\Desktop\PayrollProj.deps.json
+C:\Users\Adrean\Desktop\PayrollProj.runtimeconfig.json
+C:\Users\Adrean\Desktop\PayrollProj.pdb
+C:\Users\Adrean\Desktop\System.Data.SqlClient.dll
+C:\Users\Adrean\Desktop\runtimes\win-arm64\native\sni.dll
+C:\Users\Adrean\Desktop\runtimes\win-x64\native\sni.dll
+C:\Users\Adrean\Desktop\runtimes\win-x86\native\sni.dll
+C:\Users\Adrean\Desktop\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Adrean\Desktop\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
