@@ -28,3 +28,4 @@ C:\Users\Adrean\source\repos\PayrollProj\obj\Debug\net8.0-windows\PayrollProj.ge
 C:\Users\Adrean\source\repos\PayrollProj\obj\Debug\net8.0-windows\ref\PayrollProj.dll
 C:\Users\Adrean\source\repos\PayrollProj\obj\Debug\net8.0-windows\PayrollProj.Bonus.resources
 C:\Users\Adrean\source\repos\PayrollProj\obj\Debug\net8.0-windows\PayrollProj.Login.resources
+C:\Users\Adrean\source\repos\PayrollProj\obj\Debug\net8.0-windows\PayrollProj.sourcelink.json

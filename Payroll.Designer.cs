@@ -44,8 +44,8 @@
             Column10 = new DataGridViewTextBoxColumn();
             EmpNameTb = new TextBox();
             label9 = new Label();
-            SalDate = new DateTimePicker();
             panel1 = new Panel();
+            MonthYearCb = new ComboBox();
             BonusId2 = new TextBox();
             label16 = new Label();
             HoursWorkedTb = new TextBox();
@@ -219,17 +219,10 @@
             label9.TabIndex = 11;
             label9.Text = "Period";
             // 
-            // SalDate
-            // 
-            SalDate.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            SalDate.Location = new Point(185, 170);
-            SalDate.Name = "SalDate";
-            SalDate.Size = new Size(324, 28);
-            SalDate.TabIndex = 10;
-            // 
             // panel1
             // 
             panel1.BackColor = Color.White;
+            panel1.Controls.Add(MonthYearCb);
             panel1.Controls.Add(BonusId2);
             panel1.Controls.Add(label16);
             panel1.Controls.Add(HoursWorkedTb);
@@ -255,7 +248,6 @@
             panel1.Controls.Add(SaveBtn);
             panel1.Controls.Add(SalaryDGV);
             panel1.Controls.Add(label9);
-            panel1.Controls.Add(SalDate);
             panel1.Controls.Add(label7);
             panel1.Controls.Add(EmpNameTb);
             panel1.Controls.Add(panel2);
@@ -265,6 +257,16 @@
             panel1.Size = new Size(1092, 739);
             panel1.TabIndex = 21;
             panel1.Paint += panel1_Paint;
+            // 
+            // MonthYearCb
+            // 
+            MonthYearCb.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            MonthYearCb.FormattingEnabled = true;
+            MonthYearCb.Location = new Point(185, 170);
+            MonthYearCb.Name = "MonthYearCb";
+            MonthYearCb.Size = new Size(314, 29);
+            MonthYearCb.TabIndex = 42;
+            MonthYearCb.SelectionChangeCommitted += MonthYearCb_SelectionChangeCommitted;
             // 
             // BonusId2
             // 
@@ -413,6 +415,7 @@
             // 
             // BalanceTb
             // 
+            BalanceTb.Enabled = false;
             BalanceTb.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             BalanceTb.Location = new Point(43, 170);
             BalanceTb.Name = "BalanceTb";
@@ -711,7 +714,6 @@
         private DataGridView SalaryDGV;
         private TextBox EmpNameTb;
         private Label label9;
-        private DateTimePicker SalDate;
         private Panel panel1;
         private Label label7;
         private Panel panel2;
@@ -761,5 +763,6 @@
         private DataGridViewTextBoxColumn Column8;
         private DataGridViewTextBoxColumn Column9;
         private DataGridViewTextBoxColumn Column10;
+        private ComboBox MonthYearCb;
     }
 }

@@ -33,9 +33,7 @@ namespace PayrollProj
         private void Clear()
         {
             EmpNameTb.Text = "";
-            AbsentTb.Text = "";
-            PresentTb.Text = "";
-            ExcuseTb.Text = "";
+            
             TimeInPicker.Value = DateTime.Now;
             TimeOutPicker.Value = DateTime.Now;
             Key = 0;
@@ -49,24 +47,29 @@ namespace PayrollProj
             var ds = new DataSet();
             sda.Fill(ds);
             AttendanceDGV.DataSource = ds.Tables[0];
+
             // Format the TimeIn and TimeOut columns to show only the time with AM/PM
             foreach (DataGridViewRow row in AttendanceDGV.Rows)
             {
                 if (row.Cells["TimeIn"].Value != DBNull.Value)
                 {
                     DateTime timeIn = Convert.ToDateTime(row.Cells["TimeIn"].Value);
-                    row.Cells["TimeIn"].Value = timeIn.ToString("hh:mm tt");  // 12-hour format with AM/PM
+                    row.Cells["TimeIn"].Value = timeIn.ToString("hh:mm tt");
                 }
 
                 if (row.Cells["TimeOut"].Value != DBNull.Value)
                 {
                     DateTime timeOut = Convert.ToDateTime(row.Cells["TimeOut"].Value);
-                    row.Cells["TimeOut"].Value = timeOut.ToString("hh:mm tt");  // 12-hour format with AM/PM
+                    row.Cells["TimeOut"].Value = timeOut.ToString("hh:mm tt");
                 }
+
+                // Set checkbox columns for Present, Absent, and Excused
+                row.Cells["DayPres"].Value = (row.Cells["DayPres"].Value?.ToString() == "1");
+                row.Cells["DayAbs"].Value = (row.Cells["DayAbs"].Value?.ToString() == "1");
+                row.Cells["DayExcuse"].Value = (row.Cells["DayExcuse"].Value?.ToString() == "1");
+                AttendanceDGV.Columns["TimeIn"].DefaultCellStyle.Format = "hh:mm tt";  // Example: 02:30 PM
+                AttendanceDGV.Columns["TimeOut"].DefaultCellStyle.Format = "hh:mm tt"; // Example: 06:45 PM
             }
-            // Format TimeIn and TimeOut columns to show only time (hh:mm tt for 12-hour format with AM/PM)
-            AttendanceDGV.Columns["TimeIn"].DefaultCellStyle.Format = "hh:mm tt";  // Example: 02:30 PM
-            AttendanceDGV.Columns["TimeOut"].DefaultCellStyle.Format = "hh:mm tt"; // Example: 06:45 PM
 
             Con.Close();
         }
@@ -135,9 +138,10 @@ namespace PayrollProj
                 EmpNameTb.Text = row.Cells["EmpName"].Value.ToString();
 
                 // Set Present, Absent, and Excuse TextBoxes
-                PresentTb.Text = row.Cells["DayPres"].Value.ToString();
-                AbsentTb.Text = row.Cells["DayAbs"].Value.ToString();
-                ExcuseTb.Text = row.Cells["DayExcuse"].Value.ToString();
+                // Set the CheckBox values based on DataGridView
+                PresentCb.Checked = row.Cells["DayPres"].Value != DBNull.Value && row.Cells["DayPres"].Value.ToString() == "1";
+                AbsentCb.Checked = row.Cells["DayAbs"].Value != DBNull.Value && row.Cells["DayAbs"].Value.ToString() == "1";
+                ExcuseCb.Checked = row.Cells["DayExcuse"].Value != DBNull.Value && row.Cells["DayExcuse"].Value.ToString() == "1";
 
                 // Set TimeIn DateTimePicker (assuming TimeIn is a DateTime in the database)
                 if (row.Cells["TimeIn"].Value != DBNull.Value) // Ensure valid TimeIn value
@@ -183,7 +187,7 @@ namespace PayrollProj
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
-            if (EmpNameTb.Text == "" || AbsentTb.Text == "" || PresentTb.Text == "" || ExcuseTb.Text == "")
+            if (EmpNameTb.Text == "" || !PresentCb.Checked && !AbsentCb.Checked && !ExcuseCb.Checked)
             {
                 MessageBox.Show("Missing Information");
             }
@@ -191,25 +195,28 @@ namespace PayrollProj
             {
                 try
                 {
-                    // Update: Include day, month, and year in the period
-                    string Period = AttDate.Value.ToString("MM-dd-yyyy");  // Format the period to show day-month-year
-                                                                           // string Period = AttDate.Value.Month + "-" + AttDate.Value.Year;
+                    string Period = AttDate.Value.ToString("MM-dd-yyyy");
                     DateTime timeIn = TimeInPicker.Value;
                     DateTime timeOut = TimeOutPicker.Value;
-                    // Calculate hours worked
                     double hoursWorked = CalculateHoursWorked(timeIn, timeOut);
+
+                    int present = PresentCb.Checked ? 1 : 0;
+                    int absent = AbsentCb.Checked ? 1 : 0;
+                    int excuse = ExcuseCb.Checked ? 1 : 0;
+
                     Con.Open();
                     SqlCommand cmd = new SqlCommand("insert into DTRTbl(EmpId, EmpName, DayPres, DayAbs, DayExcuse, TimeIn, TimeOut, HoursWorked, Period)values(@EI,@EN,@DP,@DA,@DE,@TI,@TO,@HW,@Per)", Con);
                     cmd.Parameters.AddWithValue("@EI", EmpIdCb.Text);
                     cmd.Parameters.AddWithValue("@EN", EmpNameTb.Text);
-                    cmd.Parameters.AddWithValue("@DP", PresentTb.Text);
-                    cmd.Parameters.AddWithValue("@DA", AbsentTb.Text);
-                    cmd.Parameters.AddWithValue("@DE", ExcuseTb.Text);
+                    cmd.Parameters.AddWithValue("@DP", present);
+                    cmd.Parameters.AddWithValue("@DA", absent);
+                    cmd.Parameters.AddWithValue("@DE", excuse);
                     cmd.Parameters.AddWithValue("@TI", timeIn);
                     cmd.Parameters.AddWithValue("@TO", timeOut);
                     cmd.Parameters.AddWithValue("@HW", hoursWorked);
                     cmd.Parameters.AddWithValue("@Per", Period);
                     cmd.ExecuteNonQuery();
+
                     MessageBox.Show("Attendance Saved");
                     Con.Close();
                     ShowAttendance();
@@ -219,14 +226,13 @@ namespace PayrollProj
                 {
                     MessageBox.Show(ex.Message);
                 }
-
             }
         }
 
 
         private void EditBtn_Click(object sender, EventArgs e)
         {
-            if (EmpNameTb.Text == "" || AbsentTb.Text == "" || PresentTb.Text == "" || ExcuseTb.Text == "")
+            if (EmpNameTb.Text == "" || !PresentCb.Checked && !AbsentCb.Checked && !ExcuseCb.Checked)
             {
                 MessageBox.Show("Missing Information");
             }
@@ -234,26 +240,29 @@ namespace PayrollProj
             {
                 try
                 {
-                    // Update: Include day, month, and year in the period
-                    string Period = AttDate.Value.ToString("MM-dd-yyyy");  // Format the period to show day-month-year
-                    //string Period = AttDate.Value.Month + "-" + AttDate.Value.Year;
+                    string Period = AttDate.Value.ToString("MM-dd-yyyy");
                     DateTime timeIn = TimeInPicker.Value;
                     DateTime timeOut = TimeOutPicker.Value;
-                    // Calculate hours worked
                     double hoursWorked = CalculateHoursWorked(timeIn, timeOut);
+
+                    int present = PresentCb.Checked ? 1 : 0;
+                    int absent = AbsentCb.Checked ? 1 : 0;
+                    int excuse = ExcuseCb.Checked ? 1 : 0;
+
                     Con.Open();
                     SqlCommand cmd = new SqlCommand("Update DTRTbl Set EmpId=@EI, EmpName=@EN, DayPres=@DP, DayAbs=@DA, DayExcuse=@DE, TimeIn=@TI, TimeOut=@TO, HoursWorked=@HW, Period=@Per where AttNum=@AttKey", Con);
                     cmd.Parameters.AddWithValue("@EI", EmpIdCb.Text);
                     cmd.Parameters.AddWithValue("@EN", EmpNameTb.Text);
-                    cmd.Parameters.AddWithValue("@DP", PresentTb.Text);
-                    cmd.Parameters.AddWithValue("@DA", AbsentTb.Text);
-                    cmd.Parameters.AddWithValue("@DE", ExcuseTb.Text);
+                    cmd.Parameters.AddWithValue("@DP", present);
+                    cmd.Parameters.AddWithValue("@DA", absent);
+                    cmd.Parameters.AddWithValue("@DE", excuse);
                     cmd.Parameters.AddWithValue("@TI", timeIn);
                     cmd.Parameters.AddWithValue("@TO", timeOut);
                     cmd.Parameters.AddWithValue("@HW", hoursWorked);
                     cmd.Parameters.AddWithValue("@Per", Period);
                     cmd.Parameters.AddWithValue("@AttKey", Key);
                     cmd.ExecuteNonQuery();
+
                     MessageBox.Show("Attendance Updated");
                     Con.Close();
                     ShowAttendance();
@@ -263,7 +272,6 @@ namespace PayrollProj
                 {
                     MessageBox.Show(ex.Message);
                 }
-
             }
         }
 

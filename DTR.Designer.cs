@@ -31,16 +31,14 @@ namespace PayrollProj
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DTR));
             panel1 = new Panel();
+            ExcuseCb = new CheckBox();
+            AbsentCb = new CheckBox();
+            PresentCb = new CheckBox();
             TimeInPicker = new DateTimePicker();
             label13 = new Label();
             label4 = new Label();
             TimeOutPicker = new DateTimePicker();
-            label11 = new Label();
-            ExcuseTb = new TextBox();
-            label8 = new Label();
-            PresentTb = new TextBox();
             label10 = new Label();
-            AbsentTb = new TextBox();
             label12 = new Label();
             EmpIdCb = new ComboBox();
             DeleteBtn = new Button();
@@ -80,16 +78,14 @@ namespace PayrollProj
             // panel1
             // 
             panel1.BackColor = Color.White;
+            panel1.Controls.Add(ExcuseCb);
+            panel1.Controls.Add(AbsentCb);
+            panel1.Controls.Add(PresentCb);
             panel1.Controls.Add(TimeInPicker);
             panel1.Controls.Add(label13);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(TimeOutPicker);
-            panel1.Controls.Add(label11);
-            panel1.Controls.Add(ExcuseTb);
-            panel1.Controls.Add(label8);
-            panel1.Controls.Add(PresentTb);
             panel1.Controls.Add(label10);
-            panel1.Controls.Add(AbsentTb);
             panel1.Controls.Add(label12);
             panel1.Controls.Add(EmpIdCb);
             panel1.Controls.Add(DeleteBtn);
@@ -106,6 +102,39 @@ namespace PayrollProj
             panel1.Name = "panel1";
             panel1.Size = new Size(1092, 739);
             panel1.TabIndex = 35;
+            // 
+            // ExcuseCb
+            // 
+            ExcuseCb.AutoSize = true;
+            ExcuseCb.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ExcuseCb.Location = new Point(666, 95);
+            ExcuseCb.Name = "ExcuseCb";
+            ExcuseCb.Size = new Size(96, 25);
+            ExcuseCb.TabIndex = 35;
+            ExcuseCb.Text = "Excuse";
+            ExcuseCb.UseVisualStyleBackColor = true;
+            // 
+            // AbsentCb
+            // 
+            AbsentCb.AutoSize = true;
+            AbsentCb.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            AbsentCb.Location = new Point(459, 95);
+            AbsentCb.Name = "AbsentCb";
+            AbsentCb.Size = new Size(94, 25);
+            AbsentCb.TabIndex = 34;
+            AbsentCb.Text = "Absent";
+            AbsentCb.UseVisualStyleBackColor = true;
+            // 
+            // PresentCb
+            // 
+            PresentCb.AutoSize = true;
+            PresentCb.Font = new Font("Arial Rounded MT Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            PresentCb.Location = new Point(559, 95);
+            PresentCb.Name = "PresentCb";
+            PresentCb.Size = new Size(101, 25);
+            PresentCb.TabIndex = 33;
+            PresentCb.Text = "Present";
+            PresentCb.UseVisualStyleBackColor = true;
             // 
             // TimeInPicker
             // 
@@ -145,61 +174,14 @@ namespace PayrollProj
             TimeOutPicker.Size = new Size(133, 27);
             TimeOutPicker.TabIndex = 29;
             // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Arial Rounded MT Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label11.Location = new Point(686, 68);
-            label11.Name = "label11";
-            label11.Size = new Size(68, 20);
-            label11.TabIndex = 27;
-            label11.Text = "Excuse";
-            // 
-            // ExcuseTb
-            // 
-            ExcuseTb.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ExcuseTb.Location = new Point(686, 91);
-            ExcuseTb.Name = "ExcuseTb";
-            ExcuseTb.Size = new Size(81, 31);
-            ExcuseTb.TabIndex = 26;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Arial Rounded MT Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.Location = new Point(576, 68);
-            label8.Name = "label8";
-            label8.Size = new Size(72, 20);
-            label8.TabIndex = 25;
-            label8.Text = "Present";
-            label8.Click += label8_Click;
-            // 
-            // PresentTb
-            // 
-            PresentTb.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            PresentTb.Location = new Point(576, 91);
-            PresentTb.Name = "PresentTb";
-            PresentTb.Size = new Size(81, 31);
-            PresentTb.TabIndex = 24;
-            PresentTb.TextChanged += textBox2_TextChanged;
-            // 
             // label10
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Arial Rounded MT Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label10.Location = new Point(459, 68);
             label10.Name = "label10";
-            label10.Size = new Size(67, 20);
+            label10.Size = new Size(0, 20);
             label10.TabIndex = 23;
-            label10.Text = "Absent";
-            // 
-            // AbsentTb
-            // 
-            AbsentTb.Font = new Font("Arial Rounded MT Bold", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            AbsentTb.Location = new Point(459, 91);
-            AbsentTb.Name = "AbsentTb";
-            AbsentTb.Size = new Size(81, 31);
-            AbsentTb.TabIndex = 22;
             // 
             // label12
             // 
@@ -522,7 +504,6 @@ namespace PayrollProj
 #endregion
         private Panel panel1;
         private Label label10;
-        private TextBox AbsentTb;
         private Label label12;
         private ComboBox EmpIdCb;
         private Button DeleteBtn;
@@ -535,10 +516,6 @@ namespace PayrollProj
         private TextBox EmpNameTb;
         private Panel panel2;
         private PictureBox pictureBox7;
-        private Label label8;
-        private TextBox PresentTb;
-        private Label label11;
-        private TextBox ExcuseTb;
         private DateTimePicker TimeOutPicker;
         private Label label13;
         private Label label4;
@@ -555,5 +532,8 @@ namespace PayrollProj
         private Panel panel4;
         private PictureBox pictureBox1;
         private PictureBox pictureBox8;
+        private CheckBox ExcuseCb;
+        private CheckBox AbsentCb;
+        private CheckBox PresentCb;
     }
 }

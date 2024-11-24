@@ -3,24 +3,26 @@
   "WorkspaceRootPath": "C:\\Users\\Adrean\\source\\repos\\PayrollProj\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F4E9A12D-7CAD-4969-9614-55DBBD928678}|PayrollProj.csproj|c:\\users\\adrean\\source\\repos\\payrollproj\\bonus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4E9A12D-7CAD-4969-9614-55DBBD928678}|PayrollProj.csproj|solutionrelative:bonus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/DESKTOP_19LRU3C_SQLEXPRESS02/Payroll/True/SqlTable/dbo.DeductTbl.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F4E9A12D-7CAD-4969-9614-55DBBD928678}|PayrollProj.csproj|C:\\Users\\Adrean\\source\\repos\\PayrollProj\\bonus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F4E9A12D-7CAD-4969-9614-55DBBD928678}|PayrollProj.csproj|solutionrelative:bonus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{F4E9A12D-7CAD-4969-9614-55DBBD928678}|PayrollProj.csproj|c:\\users\\adrean\\source\\repos\\payrollproj\\payroll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4E9A12D-7CAD-4969-9614-55DBBD928678}|PayrollProj.csproj|solutionrelative:payroll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F4E9A12D-7CAD-4969-9614-55DBBD928678}|PayrollProj.csproj|C:\\Users\\Adrean\\source\\repos\\PayrollProj\\dtr.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F4E9A12D-7CAD-4969-9614-55DBBD928678}|PayrollProj.csproj|solutionrelative:dtr.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F4E9A12D-7CAD-4969-9614-55DBBD928678}|PayrollProj.csproj|C:\\Users\\Adrean\\source\\repos\\PayrollProj\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F4E9A12D-7CAD-4969-9614-55DBBD928678}|PayrollProj.csproj|solutionrelative:employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/DESKTOP_19LRU3C_SQLEXPRESS02/Payroll/True/SqlTable/dbo.DTRTbl.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F4E9A12D-7CAD-4969-9614-55DBBD928678}|PayrollProj.csproj|C:\\Users\\Adrean\\source\\repos\\PayrollProj\\payroll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{F4E9A12D-7CAD-4969-9614-55DBBD928678}|PayrollProj.csproj|solutionrelative:payroll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4E9A12D-7CAD-4969-9614-55DBBD928678}|PayrollProj.csproj|c:\\users\\adrean\\source\\repos\\payrollproj\\dtr.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F4E9A12D-7CAD-4969-9614-55DBBD928678}|PayrollProj.csproj|solutionrelative:dtr.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4E9A12D-7CAD-4969-9614-55DBBD928678}|PayrollProj.csproj|c:\\users\\adrean\\source\\repos\\payrollproj\\dtr.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4E9A12D-7CAD-4969-9614-55DBBD928678}|PayrollProj.csproj|solutionrelative:dtr.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,64 +32,93 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 7,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Bonus.cs",
-              "DocumentMoniker": "C:\\Users\\Adrean\\source\\repos\\PayrollProj\\Bonus.cs",
-              "RelativeDocumentMoniker": "Bonus.cs",
-              "ToolTip": "C:\\Users\\Adrean\\source\\repos\\PayrollProj\\Bonus.cs",
-              "RelativeToolTip": "Bonus.cs",
-              "ViewState": "AgIAAEAAAAAAAAAAAAAkwFUAAABaAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "DTR.cs",
+              "DocumentMoniker": "C:\\Users\\Adrean\\source\\repos\\PayrollProj\\DTR.cs",
+              "RelativeDocumentMoniker": "DTR.cs",
+              "ToolTip": "C:\\Users\\Adrean\\source\\repos\\PayrollProj\\DTR.cs",
+              "RelativeToolTip": "DTR.cs",
+              "ViewState": "AgIAAHYAAAAAAAAAAAA/wHMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-23T02:49:51.216Z",
+              "WhenOpened": "2024-11-20T12:16:31.27Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Bonus.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Adrean\\source\\repos\\PayrollProj\\Bonus.cs",
-              "RelativeDocumentMoniker": "Bonus.cs",
-              "ToolTip": "C:\\Users\\Adrean\\source\\repos\\PayrollProj\\Bonus.cs [Design]",
-              "RelativeToolTip": "Bonus.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-23T02:49:39.248Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "DTR.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Adrean\\source\\repos\\PayrollProj\\DTR.cs",
               "RelativeDocumentMoniker": "DTR.cs",
               "ToolTip": "C:\\Users\\Adrean\\source\\repos\\PayrollProj\\DTR.cs [Design]",
               "RelativeToolTip": "DTR.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T12:17:12.535Z"
+              "WhenOpened": "2024-11-20T12:16:27.693Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "dbo.DTRTbl [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/DESKTOP_19LRU3C_SQLEXPRESS02/Payroll/True/SqlTable/dbo.DTRTbl.sql",
+              "ToolTip": "dbo.DTRTbl [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-11-20T12:16:02.339Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "dbo.DeductTbl [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/DESKTOP_19LRU3C_SQLEXPRESS02/Payroll/True/SqlTable/dbo.DeductTbl.sql",
+              "ToolTip": "dbo.DeductTbl [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-11-20T12:14:34.9Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Payroll.cs",
+              "DocumentMoniker": "C:\\Users\\Adrean\\source\\repos\\PayrollProj\\Payroll.cs",
+              "RelativeDocumentMoniker": "Payroll.cs",
+              "ToolTip": "C:\\Users\\Adrean\\source\\repos\\PayrollProj\\Payroll.cs",
+              "RelativeToolTip": "Payroll.cs",
+              "ViewState": "AgIAAAcBAAAAAAAAAAAAABMBAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T09:06:16.753Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Employee.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Adrean\\source\\repos\\PayrollProj\\Employee.cs",
-              "RelativeDocumentMoniker": "Employee.cs",
-              "ToolTip": "C:\\Users\\Adrean\\source\\repos\\PayrollProj\\Employee.cs [Design]",
-              "RelativeToolTip": "Employee.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T12:28:14.932Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "Payroll.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Adrean\\source\\repos\\PayrollProj\\Payroll.cs",
               "RelativeDocumentMoniker": "Payroll.cs",
               "ToolTip": "C:\\Users\\Adrean\\source\\repos\\PayrollProj\\Payroll.cs [Design]",
               "RelativeToolTip": "Payroll.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-23T01:13:03.384Z"
+              "WhenOpened": "2024-11-18T09:05:27.524Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }
